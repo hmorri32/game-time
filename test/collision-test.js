@@ -14,4 +14,11 @@ describe("Collision", function() {
     assert.isFunction(collision.wallCollisions);
   });
 
+  // it("testing collision detection of paddle", function() {
+  //   var collision = new Collision();
+  //   console.log(collision);
+  //   collision.paddleHitDetection();
+  //   assert.equal(paddleHitDetection, true);
+  // });
+
 });
