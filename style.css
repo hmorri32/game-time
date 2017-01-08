@@ -3,6 +3,12 @@ body {
   font-family: 'Press Start 2P', cursive;
 }
 
+.main-title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3em;
+}
+
 .game-canvas {
   display: none;
   margin: auto;
@@ -10,10 +16,8 @@ body {
   background: #FFF;
 }
 
-.main-title {
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 3em;
+.start-page-section {
+  display: block;
 }
 
 .game-description {
@@ -30,9 +34,10 @@ body {
   display: block;
   margin: 0 auto;
   width: 170px;
-  height: 55px;
-  border: none;
+  height: 70px;
+  border: 5px solid black;
   font: inherit;
   font-size: 1.4em;
   text-transform: uppercase;
+  cursor: pointer;
 }
