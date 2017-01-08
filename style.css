@@ -1,5 +1,43 @@
+body {
+  background: #42c4d3;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.main-title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3em;
+}
+
 .game-canvas {
-  border: 1px dashed;
+  display: none;
   margin: auto;
+  border: 1px dashed;
+  background: #FFF;
+}
+
+.start-page-section {
   display: block;
+}
+
+.game-description {
+  text-align: center;
+}
+
+.arcade-image {
+  display: block;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.start-btn {
+  display: block;
+  margin: 0 auto;
+  width: 170px;
+  height: 70px;
+  border: 5px solid black;
+  font: inherit;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  cursor: pointer;
 }
