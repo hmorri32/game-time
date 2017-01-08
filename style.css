@@ -3,7 +3,8 @@ body {
   font-family: 'Press Start 2P', cursive;
 }
 
-.main-title {
+.main-title,
+.game-over-title {
   text-transform: uppercase;
   text-align: center;
   font-size: 3em;
@@ -30,14 +31,19 @@ body {
   margin: 0 auto;
 }
 
-.start-btn {
+.start-btn,
+.back-to-start-btn {
   display: block;
   margin: 0 auto;
-  width: 170px;
+  width: 240px;
   height: 70px;
   border: 5px solid black;
   font: inherit;
   font-size: 1.4em;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.gameover-page-section {
+  display: none;
 }
