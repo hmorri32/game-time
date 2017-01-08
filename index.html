@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Game Time</title>
-  <link href="style.css" rel="stylesheet">
-
-</head>
-<body>
-
-  <canvas id="game"
-        class="game-canvas"
-        width="400"
-        height="300">
-</canvas>
-
-
-  <script src="main.bundle.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>Game Time</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  </head>
+  <body>
+    <h1 class="main-title">Breakout</h1>
+    <canvas id="game"
+          class="game-canvas"
+          width="600"
+          height="400">
+    </canvas>
+    <img class="arcade-image" src="images/arcade_machine.png" alt="Arcade machine image">
+    <p class="game-description">Click on the start button to begin level 1</p>
+    <button class="start-btn" type="button" name="button">Start Game</button>
+    <script src="main.bundle.js"></script>
+  </body>
 </html>
