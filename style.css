@@ -10,8 +10,12 @@ body {
   font-size: 3em;
 }
 
-.game-canvas {
+.game-page-section {
   display: none;
+}
+
+.game-canvas {
+  display: block;
   margin: auto;
   border: 1px dashed;
   background: #FFF;
