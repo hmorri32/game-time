@@ -6,13 +6,29 @@ var Collision = require("../lib/collision");
 describe("Collision", function() {
   var collision = new Collision({});
 
-  it("should be a function", function() {
+  it("Collision should be a function", function() {
     assert.isFunction(Collision);
   });
 
   it("wallCollisions shoud be a function", function() {
     assert.isFunction(collision.wallCollisions);
   });
+
+  it("levelComplete should be a function", function() {
+    assert.isFunction(collision.levelComplete);
+  })
+
+  it("brickHitDetection should be a function", function() {
+    assert.isFunction(collision.brickHitDetection);
+  })
+
+  it("drawScore should be a function", function() {
+    assert.isFunction(collision.drawScore);
+  })
+
+  it("drawLives should be a function", function() {
+    assert.isFunction(collision.drawLives);
+  })
 
   it("should have a default score of 0", function() {
     assert.equal(collision.score, 0);
