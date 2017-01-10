@@ -14,6 +14,30 @@ describe("Paddle", function() {
     assert.isFunction(paddle.movePaddle);
   });
 
+  it("should have a default x start position", function() {
+    assert.equal(paddle.x, 200);
+  });
+
+  it("should have a default y start position", function() {
+    assert.equal(paddle.y, 300);
+  });
+
+  it("should have a default paddle width", function() {
+    assert.equal(paddle.width, 100);
+  });
+
+  it("shoudl have a default paddle height", function() {
+    assert.equal(paddle.height, 10);
+  });
+
+  it("moveRight should be false as default", function() {
+    assert.equal(paddle.moveRight, false);
+  });
+
+  it("moveLeft should be false as default", function() {
+    assert.equal(paddle.moveLeft, false);
+  });
+
   // it("paddle should move right and moveRight should be true", function() {
   //   paddle.movePaddle();
   //   assert.equal(paddle.moveRight, true);

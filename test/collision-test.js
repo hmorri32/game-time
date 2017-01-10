@@ -14,6 +14,14 @@ describe("Collision", function() {
     assert.isFunction(collision.wallCollisions);
   });
 
+  it("should have a default score of 0", function() {
+    assert.equal(collision.score, 0);
+  });
+
+  it("should have a default lives of 3", function() {
+    assert.equal(collision.lives, 3);
+  });
+
   // it("testing collision detection of paddle", function() {
   //   var collision = new Collision();
   //   console.log(collision);
