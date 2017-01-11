@@ -22,6 +22,7 @@ describe("Ball", function() {
     assert.isFunction(ball.resetBallAndPaddle);
   });
 
+
   it("ball should have an x start position", function() {
     assert.equal(ball.x, 100);
   });
