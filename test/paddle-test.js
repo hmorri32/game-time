@@ -38,13 +38,23 @@ describe("Paddle", function() {
     assert.equal(paddle.moveLeft, false);
   });
 
-  // it("paddle should move right and moveRight should be true", function() {
-  //   paddle.movePaddle();
-  //   assert.equal(paddle.moveRight, true);
-  // });
-  //
-  // it("paddle should move left and moveLeft should be true", function() {
-  //   paddle.movePaddle();
-  //   assert.equal(paddle.moveLeft, true);
-  // });
+  it("should move the paddle right by 5", function() {
+    var paddle = new Paddle({
+                             moveRight: true,
+                             canvas: {width: 400}
+                            });
+    assert.equal(paddle.x, 200);
+    paddle.movePaddle();
+    assert.equal(paddle.x, 205);
+  });
+
+  it("should move the paddle left by 5", function() {
+    var paddle = new Paddle({
+                             moveLeft: true,
+                             canvas: {width: 400}
+                            });
+    assert.equal(paddle.x, 200);
+    paddle.movePaddle();
+    assert.equal(paddle.x, 195);
+  });
 });
