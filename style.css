@@ -4,7 +4,7 @@ body {
 }
 
 .main-title,
-.game-over-title {
+.game-status-title {
   text-transform: uppercase;
   text-align: center;
   font-size: 3em;
@@ -29,6 +29,10 @@ body {
   text-align: center;
 }
 
+.gameover-page-section {
+  display: none;
+}
+
 .arcade-image {
   display: block;
   height: 400px;
@@ -49,6 +53,10 @@ body {
   cursor: pointer;
 }
 
+.new-level-section {
+  display: none;
+}
+
 .new-level-start-btn{
   margin-top: 30px;
 }
@@ -57,10 +65,6 @@ body {
   text-align: center;
 }
 
-.gameover-page-section {
-  display: none;
-}
-
-.new-level-section {
+.complete-page-section {
   display: none;
 }
