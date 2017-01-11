@@ -16,19 +16,19 @@ describe("Collision", function() {
 
   it("levelComplete should be a function", function() {
     assert.isFunction(collision.levelComplete);
-  })
+  });
 
   it("brickHitDetection should be a function", function() {
     assert.isFunction(collision.brickHitDetection);
-  })
+  });
 
   it("drawScore should be a function", function() {
     assert.isFunction(collision.drawScore);
-  })
+  });
 
   it("drawLives should be a function", function() {
     assert.isFunction(collision.drawLives);
-  })
+  });
 
   it("should have a default score of 0", function() {
     assert.equal(collision.score, 0);
