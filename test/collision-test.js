@@ -102,4 +102,14 @@ describe("Collision", function() {
     assert.equal(collision.ball.x, 201);
     assert.equal(collision.ballHitPaddle(), true);
   });
+
+  it("ball should detect hit with brick and alter status", function() {
+    var collision = new Collision({
+                                   bricks: {x: 300, y:300, width:100, height:15, status: 1, bricksOnPage: 30},
+                                   gameBall: {x: 310, y:310, radius:10}
+                                 });
+    assert.equal(collision.bricks.status, 1);
+    collision.testForBrickDetection(collision.bricks);
+    assert.equal(collision.bricks.status, 0);
+  });
 });
