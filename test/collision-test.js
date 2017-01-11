@@ -4,31 +4,36 @@ var assert = chai.assert;
 var Collision = require("../lib/collision");
 
 describe("Collision", function() {
-  var collision = new Collision({});
+  var collision = new Collision({
+                                 gameBall : {x: 400, y: 390, radius: 10, speedX: 5, speedY: -5},
+                                 gamePaddle : {height: 15},
+                                 bricks : {bricksOnPage: 30},
+                                 canvas : {width: 400, height: 400},
+                                });
 
   it("Collision should be a function", function() {
     assert.isFunction(Collision);
   });
 
-  it("wallCollisions shoud be a function", function() {
+  it("wallCollisions should be a function", function() {
     assert.isFunction(collision.wallCollisions);
   });
 
   it("levelComplete should be a function", function() {
     assert.isFunction(collision.levelComplete);
-  })
+  });
 
   it("brickHitDetection should be a function", function() {
     assert.isFunction(collision.brickHitDetection);
-  })
+  });
 
   it("drawScore should be a function", function() {
     assert.isFunction(collision.drawScore);
-  })
+  });
 
   it("drawLives should be a function", function() {
     assert.isFunction(collision.drawLives);
-  })
+  });
 
   it("should have a default score of 0", function() {
     assert.equal(collision.score, 0);
@@ -38,11 +43,63 @@ describe("Collision", function() {
     assert.equal(collision.lives, 3);
   });
 
-  // it("testing collision detection of paddle", function() {
-  //   var collision = new Collision();
-  //   console.log(collision);
-  //   collision.paddleHitDetection();
-  //   assert.equal(paddleHitDetection, true);
-  // });
+  it("should decrease bricks on page by 1", function() {
+    assert.equal(collision.bricks.bricksOnPage, 30);
+    collision.decreaseBrickCount();
+    assert.equal(collision.bricks.bricksOnPage, 29);
+  });
 
+  it("should increase the score by 1", function() {
+    assert.equal(collision.score, 0);
+    collision.increaseScore();
+    assert.equal(collision.score, 1);
+  });
+
+  it("should reverse direction of ball on X axis", function() {
+    assert.equal(collision.ball.speedX, 5);
+    collision.changeBallDirectionX();
+    assert.equal(collision.ball.speedX, -5);
+  });
+
+  it("should reverse direction of ball on Y axis", function() {
+    assert.equal(collision.ball.speedY, -5);
+    collision.changeBallDirectionY();
+    assert.equal(collision.ball.speedY, 5);
+  });
+
+  it("should detect ball collision with right wall", function() {
+    assert.equal(collision.ball.x, 400);
+    assert.equal(collision.ballHitsLeftRightWalls(), true);
+  });
+
+  it("should detect ball collision with left wall", function() {
+    var collision = new Collision({gameBall: {x: 0, radius: 10},
+                                   canvas : {width: 400, height: 400}
+                                 });
+    assert.equal(collision.ball.x, 0);
+    assert.equal(collision.ballHitsLeftRightWalls(), true);
+  });
+
+  it("should detect ball collision with bottom", function() {
+    assert.equal(collision.ball.y, 390);
+    assert.equal(collision.ballHitBottom(), true);
+  });
+
+  it("should detect ball collision with top", function() {
+    var collision = new Collision({gameBall: {y: 0, radius: 10},
+                                   gamePaddle: {height: 15},
+                                   canvas : {width: 400, height: 400}
+                                 });
+    assert.equal(collision.ball.y, 0);
+    assert.equal(collision.ballHitTop(), true);
+  });
+
+  it("ball should hit paddle", function() {
+    var collision = new Collision({gameBall: {x: 201},
+                                   gamePaddle: {x:200, width: 100}
+                                 });
+    assert.equal(collision.paddle.x, 200);
+    assert.equal(collision.ball.x, 201);
+    assert.equal(collision.ballHitPaddle(), true);
+  });
 });
